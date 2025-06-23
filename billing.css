@@ -1,0 +1,180 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and page layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Billing container */
+.billing-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Billing content section (Row layout for Product Entry and Order Summary) */
+.billing-content {
+    display: flex;
+    gap: 30px;
+}
+
+/* Product entry section */
+.product-entry {
+    width: 48%;
+}
+
+.product-entry h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* Customer info section (Name & Phone) aligned in row */
+.customer-info {
+    margin-bottom: 20px;
+}
+
+.customer-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.customer-inputs label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.customer-inputs input {
+     width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px
+    
+}
+
+/* Product section */
+.product label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.product select,
+.product input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.add-product-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-product-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Order summary section */
+.order-summary {
+    width: 48%;
+}
+
+.order-summary h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-summary th, .order-summary td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.order-summary th {
+    background-color: #ecf0f1;
+}
+
+.order-summary td {
+    border-top: 1px solid #ecf0f1;
+}
+
+.total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Generate bill button */
+.generate-bill {
+    
+    margin-top: -44px;
+    margin-left: 680px;
+}
+
+.generate-bill-btn {
+    padding: 12px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.generate-bill-btn:hover {
+    background-color: #27ae60;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oil Management System Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For charts -->
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <h1>Oil Management System</h1>
+            </div>
+            <div class="user-info">
+                
+                <button class="logout-btn">Logout</button>
+            </div>
+        </header>
+        
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Bill.html">Billing</a></li>
+                    <li><a href="#"></a></li>
+                    
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content Section -->
+        <main class="main-content">
+            <!-- Overview Cards -->
+            <section class="status-overview">
+                <div class="card">
+                    <h2>Product Sales</h2>
+                    <p class="status">Active</p>
+                </div>
+                <div class="card">
+                    <h2>Oil Inventory</h2>
+                    <p>5000 Liters</p>
+                </div>
+                <div class="card">
+                    <h2>Alerts</h2>
+                    <p>No new alerts</p>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts">
+                <h2>Usage Overview</h2>
+                <div class="chart-container">
+                    <div class="chart">
+                        <canvas id="oilConsumptionChart"></canvas> <!-- Oil Consumption Chart -->
+                    </div>
+                    <div class="chart">
+                        <canvas id="inventoryLevelsChart"></canvas> <!-- Inventory Levels Chart -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Example chart for oil consumption
+        var ctx1 = document.getElementById('oilConsumptionChart').getContext('2d');
+        var oilConsumptionChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Oil Consumption',
+                    data: [30, 50, 70, 90, 120],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Example chart for inventory levels
+        var ctx2 = document.getElementById('inventoryLevelsChart').getContext('2d');
+        var inventoryLevelsChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Inventory Levels (Liters)',
+                    data: [5000, 4500, 4000, 3800, 3500],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

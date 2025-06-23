@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oil Dashboard</title>
+    <style>
+        /* Reset default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        header .logo h1 {
+            font-size: 24px;
+        }
+
+        header nav ul {
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Slideshow */
+        .slideshow {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none; /* Hide all slides by default */
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            display: block; /* Show the active slide */
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Oil Details */
+        .oil-details {
+            padding: 40px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        .oil-details h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            width: 30%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Advertisement Section */
+        .advertisement {
+            padding: 30px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+        }
+
+        .advertisement .ad {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .advertisement h3 {
+            font-size: 28px;
+        }
+
+        .advertisement p {
+            font-size: 18px;
+        }
+
+        .advertisement a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .advertisement a:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .contact-info {
+            text-align: left;
+        }
+
+        footer .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-links {
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <h1>Unique Automobiles</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/CustomerDashboard.html">Home</a></li>
+                <li><a href="/Products.html">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow" id="home">
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="s1.jpeg" alt="Oil 1">
+                <div class="text">High-Quality Oil</div>
+            </div>
+            <div class="slide">
+                <img src="s2.jpeg" alt="Oil 2">
+                <div class="text">Premium Quality Products</div>
+            </div>
+            <div class="slide">
+                <img src="s3.jpeg" alt="Oil 3">
+                <div class="text">Best in the Market</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oil Details Section -->
+    <section class="oil-details" id="about">
+        
+        <div class="products">
+            <div class="product-card">
+                
+                <h3>Premium Oil</h3>
+                <p>This oil is sourced from the best suppliers, offering optimal performance.</p>
+            </div>
+            <div class="product-card">
+                
+                <h3>High Efficiency Oil</h3>
+                <p>For high efficiency machines, ensuring smooth operation.</p>
+            </div>
+            <div class="product-card">
+               
+                <h3>Eco-Friendly Oil</h3>
+                <p>Environmentally friendly, yet provides high performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advertisement Section -->
+    <section class="advertisement">
+        <div class="ad">
+            <h3>Special Offer on Premium Oil</h3>
+            <p>Get 20% off on your first purchase! Limited time offer.</p>
+            <a href="#">Buy Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us :</h3>
+                <p>Address: Sr. No.73, Gulam Ali nagar, Hadapasar , Pune-28</p>
+                <p>Email: burhanik72@gamil.com</p>
+                <p>Phone:+91 87888 44312</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2025 Oil Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+
+            // Remove the active class from all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1; // Reset to first slide if we're past the last slide
+            }
+
+            // Add the active class to the current slide
+            slides[slideIndex - 1].classList.add("active");
+
+            // Change the slide every 3 seconds
+            setTimeout(showSlides, 3000);
+        }
+
+        // Initial display of first slide
+        showSlides();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Billing Information</title>
+    <link rel="stylesheet" href="billing.css">
+</head>
+<body>
+    <div class="billing-container">
+        <header class="header">
+            <h1>Billing Information</h1>
+        </header>
+
+        <main class="main-content">
+            <!-- Two Containers: Enter Product and Order Summary -->
+            <section class="billing-content">
+                <!-- Product Entry Section -->
+                <div class="product-entry">
+                    <h2>Enter Products</h2>
+                    
+                    <!-- Customer Info Section (Name & Phone) -->
+                    <div class="customer-info">
+                        <div class="customer-inputs">
+                            <div class="input-group">
+                                <label for="customer-name">Name</label>
+                                <input type="text" id="customer-name" name="customer-name" required placeholder="Enter your name">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="customer-phone">Phone Number</label>
+                                <input type="text" id="customer-phone" name="customer-phone" required placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="product-form">
+                        <div class="product">
+                            <label for="product-name">Product</label>
+                            <select id="product-name" name="product-name" required>
+                                <option value="" disabled selected>Select a Product</option>
+                                <option value="premium-oil">Premium Oil</option>
+                                <option value="engine-cleaner">Engine Cleaner</option>
+                                <option value="car-wash">Car Wash</option>
+                            </select>
+
+                            <label for="product-price">Price ($)</label>
+                            <input type="text" id="product-price" name="product-price" readonly>
+
+                            <label for="product-quantity">Quantity</label>
+                            <input type="number" id="product-quantity" name="product-quantity" value="1" min="1">
+
+                            <button type="button" class="add-product-btn">Add Product</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary Section -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <table id="order-summary">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-table-body">
+                            <!-- Product rows will appear here -->
+                        </tbody>
+                    </table>
+                    <div class="total">
+                        <strong>Total Price: $<span id="total-price">0</span></strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Generate Bill Button -->
+            <section class="generate-bill">
+                <button type="button" class="generate-bill-btn" id="generate-bill-btn">Generate Bill</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="billing.js"></script>
+</body>
+</html>
